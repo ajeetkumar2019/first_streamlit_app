@@ -56,6 +56,7 @@ streamlit.header("The fruit load list contains:")
 #Snowflake-related functions
 def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
+    steamlit.write("Error")
     my_cur.excute("select * from fruit_load_list")
     return my_cur.fetchall()
  ############################################################################
