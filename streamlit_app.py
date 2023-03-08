@@ -54,11 +54,11 @@ except URLError as e:
 streamlit.header("The fruit load list contains:")
 ################################################################
 #Snowflake-related functions
-def get_fruit_load_list():
-  with my_cnx.cursor() as my_cur:
-    steamlit.write("Error")
-    my_cur.excute("select * from fruit_load_list")
-    return my_cur.fetchall()
+#def get_fruit_load_list():
+ # with my_cnx.cursor() as my_cur:
+  #  steamlit.write("Error")
+  #  my_cur.excute("select * from fruit_load_list")
+  #  return my_cur.fetchall()
  ############################################################################
 
 #Add a button to load the fruit
@@ -73,6 +73,8 @@ my_cur = my_cnx.cursor()
 my_cur.excute("select * from fruit_load_list")
 add_my_fruit = streamlit.text_input('Hello, What Fruit would you like to add? :')
 streamlit.write('Thanks for adding: ',add_my_fruit)
+
+#add
 strQuery = "insert into fruit_load_list values ('"+ add_my_fruit +"')"
 my_cur.execute(strQuery)
 my_cur.execute("select * from fruit_load_list")
