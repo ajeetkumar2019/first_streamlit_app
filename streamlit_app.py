@@ -54,4 +54,4 @@ streamlit.header("The fruit load list contains:")
 streamlit.text(my_data_row)
 streamlit.dataframe(my_data_row)
 
-streamlit.stop()
+#streamlit.stop()
